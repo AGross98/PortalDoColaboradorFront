@@ -1,1 +1,15 @@
-<p>funcionario-cadastrar works!</p>
+<p>Cadastrar Funcionario</p>
+
+<form >
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required [(ngModel)]="nome">
+    
+    <br><br>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required [(ngModel)]="cpf">
+    
+    <br><br>
+
+    <button (click)="Cadastrar()">Cadastrar</button>
+</form>
