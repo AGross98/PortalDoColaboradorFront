@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FuncionarioListarComponent } from './pages/funcionario/funcionario-listar/funcionario-listar.component';
 import { FormsModule } from '@angular/forms';
+import { FuncionarioCadastrarComponent } from './src/app/pages/funcionario/funcionario-cadastrar/funcionario-cadastrar.component';
+import { JornadaListarComponent } from './pages/jornada/jornada-listar/jornada-listar.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    FuncionarioListarComponent
+    FuncionarioListarComponent,
+    FuncionarioCadastrarComponent,
+    JornadaListarComponent
   ]
 })
 export class AppModule { }

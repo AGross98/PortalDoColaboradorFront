@@ -1,7 +1,15 @@
 <p>Lista de Funncionario</p>
 
-<ul>
-    <li *ngFor="let f of funcionarios">
-        {{f.nome}}
-    </li>
-</ul>
+<table id = "table">
+    <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let f of funcionarios">
+        <th>{{f.nome}}</th>
+        <th>{{f.cpf}}</th>
+        <th>{{f.status}}</th>
+    </tr>
+</table>
+
