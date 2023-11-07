@@ -19,7 +19,7 @@ const routes: Routes = [
   }
 
 ];
-
+//teste
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
