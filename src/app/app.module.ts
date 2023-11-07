@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { JornadaCadastrarComponent } from './pages/jornada/jornada-listar/jornada-cadastrar/jornada-cadastrar.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppComponent,
     FuncionarioListarComponent,
     FuncionarioCadastrarComponent,
-    JornadaListarComponent
+    JornadaListarComponent,
+    JornadaCadastrarComponent
   ]
 })
 export class AppModule { }
