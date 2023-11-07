@@ -1,7 +1,31 @@
 
-<a routerLink="/portalcolaborador/funcionario/listar">Listar Funcionario</a>
-<a routerLink="/portalcolaborador/funcionario/cadastrar">Cadastrar Funcionario</a>
+<mat-toolbar color="primary">
+    <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon> menu </mat-icon>
+    </button>
+        <span>Portal Do Colaborador</span>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+    
+<mat-sidenav #sidenav [opened]="true" mode="side">
+<mat-nav-list>
+    <a mat-list-item routerLink="/portalcolaborador/funcionario/listar">
+        <div class="item">
+<mat-icon class="icon"> list</mat-icon>
+            <span> listar </span>
+        </div>
+    </a>   
+ <a mat-list-item routerLink="/portalcolaborador/funcionario/cadastrar">
+        <div class="item">
+<mat-icon class="icon"> add</mat-icon>
+            <span> cadastrar </span>
+        </div>
+    </a>
+</mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content>
+    <router-outlet>
 
-<router-outlet>
-
-</router-outlet>
+    </router-outlet>
+</mat-sidenav-content>
+</mat-sidenav-container>
