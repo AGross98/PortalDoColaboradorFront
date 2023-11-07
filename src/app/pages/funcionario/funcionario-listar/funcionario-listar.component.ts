@@ -14,8 +14,6 @@ export class FuncionarioListarComponent {
  constructor(private clinet: HttpClient){
   
  }
-
-
  
  ngOnInit(): void{
   console.log("o conponente foi inciado");
@@ -32,6 +30,17 @@ export class FuncionarioListarComponent {
 
   })
  }
+
+ Deletar(id: number): void{
+  console.log(id);
+  this.clinet.delete(`https://localhost:7061/portalcolaborador/funcionario/deletar/${id}`)
+  .subscribe({
+    next: (funcionarios) =>{
+      this.ngOnInit();
+    }
+  })
+ }
+
 }
 
 //https://localhost:7061/portalcolaborador/funcionario/listar

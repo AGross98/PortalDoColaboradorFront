@@ -3,14 +3,17 @@
 
 <table id = "table">
     <tr>
+        <th>ID</th>
         <th>Nome</th>
         <th>CPF</th>
         <th>Status</th>
     </tr>
     <tr *ngFor="let f of funcionarios">
+        <th>{{f.funcionarioId}}</th>
         <th>{{f.nome}}</th>
         <th>{{f.cpf}}</th>
         <th>{{f.status}}</th>
+        <th><button (click)="Deletar(f.funcionarioId!)">Deletar</button></th>
     </tr>
 </table>
 

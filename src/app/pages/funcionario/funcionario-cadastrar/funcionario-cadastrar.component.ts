@@ -9,7 +9,7 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./funcionario-cadastrar.component.css']
 })
 export class FuncionarioCadastrarComponent {
-
+  id!: number;
   nome!: string;
   cpf!: number;
   status: number = 0;
