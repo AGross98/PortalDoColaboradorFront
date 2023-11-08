@@ -20,11 +20,11 @@ export class FuncionarioCadastrarComponent {
 
   Cadastrar() :void{
     console.log("cadastrar")
-    let funcionario : Funcionario = {
-      nome : this.nome,
-      cpf : this.cpf,
-      status : this.status
-    };
+      let funcionario : Funcionario = {
+        nome : this.nome,
+        cpf : this.cpf,
+        status : this.status
+      };
 
     this.client.post<Funcionario>
       ("https://localhost:7061/portalcolaborador/funcionario/cadastrar", funcionario)

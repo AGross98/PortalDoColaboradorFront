@@ -15,6 +15,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { JornadaCadastrarComponent } from './pages/jornada/jornada-listar/jornada-cadastrar/jornada-cadastrar.component';
+import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { JornadaCadastrarComponent } from './pages/jornada/jornada-listar/jornad
     FuncionarioListarComponent,
     FuncionarioCadastrarComponent,
     JornadaListarComponent,
-    JornadaCadastrarComponent
+    JornadaCadastrarComponent,
+    FuncionarioEditarComponent
   ]
 })
 export class AppModule { }
