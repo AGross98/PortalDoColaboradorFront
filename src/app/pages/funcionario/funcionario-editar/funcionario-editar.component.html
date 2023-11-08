@@ -1,0 +1,20 @@
+<p>Editar Funcionario</p>
+
+<form >
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required [(ngModel)]="nome">
+    
+    <br><br>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" required [(ngModel)]="cpf">
+
+    <br><br>
+    
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status" required [(ngModel)]="status">
+    
+    <br><br>
+
+    <button (click)="Editar()">editar</button>
+</form>
