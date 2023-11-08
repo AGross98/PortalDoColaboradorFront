@@ -4,6 +4,7 @@ import { FuncionarioListarComponent } from './pages/funcionario/funcionario-list
 import { FuncionarioCadastrarComponent } from './pages/funcionario/funcionario-cadastrar/funcionario-cadastrar.component';
 import { JornadaCadastrarComponent } from './pages/jornada/jornada-listar/jornada-cadastrar/jornada-cadastrar.component';
 import { JornadaListarComponent } from './pages/jornada/jornada-listar/jornada-listar.component';
+import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
 
 const routes: Routes = [
 
@@ -26,8 +27,11 @@ const routes: Routes = [
   {
     path: "portalcolaborador/jornada/cadastrar",
     component: JornadaCadastrarComponent
+  },
+  {
+    path: "portalcolaborador/jornada/editar/:id",
+    component: FuncionarioEditarComponent
   }
-
 ];
 
 @NgModule({
