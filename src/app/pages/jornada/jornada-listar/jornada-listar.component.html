@@ -1,6 +1,12 @@
 <h2>Listagem de Jornadas</h2>
-<ul>
-  <li *ngFor="let jornada of jornadas">
-    {{ jornada.data }} <!-- Supondo que cada jornada possui uma propriedade 'data' -->
-  </li>
-</ul>
+
+<table id = "table">
+  <tr>
+    <th>Funcionario</th>
+    <th>Ponto Registrado</th>
+  </tr>
+  <tr *ngFor="let j of jornadas">
+    <th>{{j.funcionario?.nome}}</th>
+    <th>{{j.ponto}}</th>
+  </tr>
+</table>

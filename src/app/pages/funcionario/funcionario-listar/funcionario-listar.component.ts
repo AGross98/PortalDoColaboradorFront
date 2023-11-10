@@ -35,7 +35,7 @@ export class FuncionarioListarComponent {
   console.log(id);
   this.clinet.delete(`https://localhost:7061/portalcolaborador/funcionario/deletar/${id}`)
   .subscribe({
-    next: (funcionarios) =>{
+    next: () =>{
       this.ngOnInit();
     }
   })

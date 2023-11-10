@@ -1,6 +1,6 @@
 export interface Funcionario{
     funcionarioId?: number,
     nome: string,
-    "cpf": number,
-    "status": number
+    cpf: number,
+    status: number
 }

@@ -14,7 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { JornadaCadastrarComponent } from './pages/jornada/jornada-listar/jornada-cadastrar/jornada-cadastrar.component';
+import { JornadaCadastrarComponent } from './pages/jornada/jornada-cadastrar/jornada-cadastrar.component';
 import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
 
 @NgModule({
