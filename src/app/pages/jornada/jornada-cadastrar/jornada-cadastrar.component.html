@@ -1,14 +1,13 @@
 <p>Cadastrar Jornada</p>
 
-<form>
   <label for="data">Data:</label>
   <input type="date" id="data" name="data" [(ngModel)]="ponto" required>
 
   <br><br>
 
   <label>Funcionario</label>
-  <select [(ngModel)]="funcionarios">
-    <option *ngFor="let f of funcionarios" value="{{f.funcionarioId}}">
+  <select [(ngModel)]="funcionarioId">
+    <option *ngFor="let f of funcionarios" value="{{ f.funcionarioId }}">
       {{f.nome}}
     </option>
   </select>
@@ -16,4 +15,17 @@
   <br><br>
 
   <button (click)="Cadastrar()">Cadastrar</button>
-</form>
+
+
+  -- Tela Facastro de Funcionario - OK
+  -- Tela de Registro de Jornada
+  -- Tela de Gerar  PDF de Jornada(Gerente)
+  -- Tela de Assinar Jornada()
+
+
+  João
+  dia 10:25 ate 11:30 
+  dia 10:25 ate 11:30
+  dia 10:25 ate 11:30
+  dia 10:25 ate 11:30
+  dia 10:25 ate 11:30

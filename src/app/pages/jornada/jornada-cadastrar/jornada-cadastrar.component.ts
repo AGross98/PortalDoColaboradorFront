@@ -14,7 +14,8 @@ export const ROUTER_TOKEN = new InjectionToken<Router>('router');
 })
 export class JornadaCadastrarComponent {
   ponto!: Date
-  funcionarioId: number = 7 //So esta salvando no ID setado aqui. bug na hora de pegar o Id selecionado.
+  teste1: number = 0;
+  funcionarioId: number = 0 //So esta salvando no ID setado aqui. bug na hora de pegar o Id selecionado.
   funcionarios : Funcionario[] = []
   
   constructor(
@@ -42,18 +43,10 @@ export class JornadaCadastrarComponent {
 
   Cadastrar(): void {
     console.log("Cadastrar jornada");
-    const jornada: Jornada = {
-      ponto : this.ponto,
-      funcionarioId: this.funcionarioId
-    };
-
-    this.client.post<Jornada>("https://localhost:7061/portalcolaborador/jornada/cadastrar",jornada)
-    .subscribe({
-      next:() => {
-        this.router.navigate(['portalcolaborador/jornada/listar'])
-      }
-    })
-
+     const jornada: Jornada = {
+       ponto : this.ponto,
+       funcionarioId: this.funcionarioId
+     };
     console.log(jornada)
   }
 }
