@@ -5,12 +5,22 @@ import { FuncionarioCadastrarComponent } from './pages/funcionario/funcionario-c
 import { JornadaCadastrarComponent } from './pages/jornada/jornada-cadastrar/jornada-cadastrar.component';
 import { JornadaListarComponent } from './pages/jornada/jornada-listar/jornada-listar.component';
 import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
+import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
+import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
 
 const routes: Routes = [
 
   {
     path: "",
-    component: FuncionarioListarComponent
+    component: LoginAutenticarComponent
+  },
+  {
+    path: "portalcolaborador/login/cadastrar",
+    component: LoginCadastrarComponent
+  },
+  {
+    path: "portalcolaborador/login",
+    component: LoginAutenticarComponent
   },
   {
     path: "portalcolaborador/funcionario/listar",

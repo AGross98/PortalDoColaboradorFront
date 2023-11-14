@@ -20,7 +20,6 @@ export class JornadaCadastrarComponent {
   
   constructor(
     private client: HttpClient,
-    private router: Router
   ) {}
 
   
