@@ -14,13 +14,11 @@ export const ROUTER_TOKEN = new InjectionToken<Router>('router');
 })
 export class JornadaCadastrarComponent {
   ponto!: Date
-  teste1: number = 0;
   funcionarioId: number = 0 //So esta salvando no ID setado aqui. bug na hora de pegar o Id selecionado.
   funcionarios : Funcionario[] = []
   
   constructor(
     private client: HttpClient,
-    private router: Router
   ) {}
 
   
@@ -36,10 +34,8 @@ export class JornadaCadastrarComponent {
       error:(erro) => {
         console.log(erro);
       }
-  
     })
    }
-
 
   Cadastrar(): void {
     console.log("Cadastrar jornada");

@@ -16,6 +16,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { JornadaCadastrarComponent } from './pages/jornada/jornada-cadastrar/jornada-cadastrar.component';
 import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
+import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
+import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
+import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
+import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
 
 @NgModule({
   imports: [
@@ -38,7 +42,11 @@ import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-edit
     FuncionarioCadastrarComponent,
     JornadaListarComponent,
     JornadaCadastrarComponent,
-    FuncionarioEditarComponent
+    FuncionarioEditarComponent,
+    LoginAutenticarComponent,
+    LoginCadastrarComponent,
+    HomeFuncionarioComponent,
+    HomeGerenteComponent
   ]
 })
 export class AppModule { }

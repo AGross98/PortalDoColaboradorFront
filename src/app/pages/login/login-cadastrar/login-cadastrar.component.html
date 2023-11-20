@@ -1,0 +1,19 @@
+
+<div>
+    <p>Portal do Colaborador</p>
+
+    <label for="cpf">CPF</label>
+    <input type="number" id="cpf" name="cpf" [(ngModel)]="cpf" required>
+
+    <br>
+
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" name="usuario" [(ngModel)]="user">
+    
+    <br>
+    
+    <label for="senah">Senha</label>
+    <input type="password" id="senha" name="senha" [(ngModel)]="senha">
+    
+    <button (click)="CadastrarUsuario()">Cadastrar</button>
+</div>
