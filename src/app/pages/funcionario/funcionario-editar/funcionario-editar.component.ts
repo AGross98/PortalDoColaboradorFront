@@ -12,7 +12,7 @@ export class FuncionarioEditarComponent {
 
   id!: number;
   nome!: string;
-  cpf!: number;
+  cpf!: string;
   status: number = 0;
 
   constructor(

@@ -11,7 +11,7 @@ import { Route, Router } from '@angular/router';
 export class FuncionarioCadastrarComponent {
   id!: number;
   nome!: string;
-  cpf!: number;
+  cpf!: string;
   status: number = 0;
 
   constructor(
@@ -30,7 +30,7 @@ export class FuncionarioCadastrarComponent {
       ("https://localhost:7061/portalcolaborador/funcionario/cadastrar", funcionario)
       .subscribe({
         next : () =>{
-          this.router.navigate(['portalcolaborador/funcionario/listar'])
+          this.router.navigate(['portalcolaborador/funcionario/listar']);
         },
         error: (err)=> {
             console.log("erro", err);
