@@ -8,6 +8,13 @@ import { Funcionario } from 'src/app/models/funcionarios';
   styleUrls: ['./funcionario-listar.component.css']
 })
 export class FuncionarioListarComponent {
+  colunasTabela : string[] = [
+    "id",
+    "nome",
+    "cpf",
+    "status",
+    "acoes"
+  ]
 
   funcionarios : Funcionario[] = []
 
@@ -18,7 +25,9 @@ export class FuncionarioListarComponent {
  ngOnInit(): void{
   console.log("o conponente foi inciado");
 
-  this.clinet.get<Funcionario[]>("https://localhost:7061/portalcolaborador/funcionario/listar").subscribe({
+
+  this.clinet.get<Funcionario[]>("https://localhost:7061/portalcolaborador/funcionario/listar")
+  .subscribe({
     next: (funcionarios) =>{
       this.funcionarios = funcionarios;
       console.table(funcionarios);

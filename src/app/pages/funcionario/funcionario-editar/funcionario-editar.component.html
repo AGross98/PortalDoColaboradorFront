@@ -1,20 +1,25 @@
-<p>Editar Funcionario</p>
-
-<form >
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required [(ngModel)]="nome">
-    
-    <br><br>
-
-    <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf" required [(ngModel)]="cpf">
-
-    <br><br>
-    
-    <label for="status">Status:</label>
-    <input type="text" id="status" name="status" required [(ngModel)]="status">
-    
-    <br><br>
-
-    <button (click)="Editar()">editar</button>
-</form>
+<div class="form-container">
+    <mat-card class="card-container">
+    <mat-card-title class="titulo">Editar Funcionário</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" id="nome" name="nome" required [(ngModel)]="nome">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>CPF</mat-label>
+        <input matInput type="text" id="cpf" name="cpf" required [(ngModel)]="cpf">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Status</mat-label>
+        <input matInput type="text" id="status" name="status" required [(ngModel)]="status">
+      </mat-form-field>
+    </mat-card-content>
+  
+    <mat-card-actions class="button-container">
+      <button mat-raised-button color="primary" (click)="Editar()">Salvar Alterações</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
