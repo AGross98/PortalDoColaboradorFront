@@ -14,7 +14,7 @@ export const ROUTER_TOKEN = new InjectionToken<Router>('router');
 })
 export class JornadaCadastrarComponent {
   ponto!: Date
-  funcionarioId: number = 0 //So esta salvando no ID setado aqui. bug na hora de pegar o Id selecionado.
+  funcionarioId!: number
   funcionarios : Funcionario[] = []
   
   constructor(

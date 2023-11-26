@@ -1,20 +1,50 @@
-<p>Lista de Funncionario</p>
+<mat-card class="container">
+    <mat-card-header class="center">
+      <mat-card-title >Funcionários</mat-card-title>
+    </mat-card-header>
 
-
-<table id = "table">
-    <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>CPF</th>
-        <th>Status</th>
-    </tr>
-    <tr *ngFor="let f of funcionarios">
-        <th>{{f.funcionarioId}}</th>
-        <th>{{f.nome}}</th>
-        <th>{{f.cpf}}</th>
-        <th>{{f.status}}</th>
-        <th><button (click)="Deletar(f.funcionarioId!)">Deletar</button></th>
-        <th><a routerLink="/portalcolaborador/jornada/editar/{{f.funcionarioId}}">Editar</a></th>
-    </tr>
-</table>
-
+    <ng-container class="center">
+        <a mat-raised-button>
+            <mat-icon>add</mat-icon>
+            <samp>Cadastrar</samp>
+        </a>
+    </ng-container>
+  
+    <mat-card-content class="list-container">
+      <table mat-table [dataSource]="funcionarios">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let funcionario">{{ funcionario.funcionarioId }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let funcionario">{{ funcionario.nome }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef>CPF</th>
+          <td mat-cell *matCellDef="let funcionario">{{ funcionario.cpf }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let funcionario">{{ funcionario.status }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="acoes">
+          <th mat-header-cell *matHeaderCellDef>Ações</th>
+          <td mat-cell *matCellDef="let funcionario" class="action">
+            <a mat-button routerLink="/portalcolaborador/jornada/editar/{{funcionario.funcionarioId}}" class="editar">
+              <mat-icon class="icon">edit</mat-icon>
+            </a>
+            <button mat-button (click)="Deletar(funcionario.funcionarioId)" class="deletar">
+              <mat-icon class="icon">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunasTabela"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>

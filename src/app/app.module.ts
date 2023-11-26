@@ -8,18 +8,19 @@ import { FormsModule } from '@angular/forms';
 import { JornadaListarComponent } from './pages/jornada/jornada-listar/jornada-listar.component';
 import { FuncionarioListarComponent } from './pages/funcionario/funcionario-listar/funcionario-listar.component';
 import { FuncionarioCadastrarComponent } from './pages/funcionario/funcionario-cadastrar/funcionario-cadastrar.component';
+import { JornadaCadastrarComponent } from './pages/jornada/jornada-cadastrar/jornada-cadastrar.component';
+import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
+import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
+import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { JornadaCadastrarComponent } from './pages/jornada/jornada-cadastrar/jornada-cadastrar.component';
-import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
-import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
-import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
-import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
-import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
+import {MatCardModule} from "@angular/material/card";
+import { MatTableModule } from "@angular/material/table";
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -32,8 +33,12 @@ import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.com
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatTableModule,
+    MatInputModule
   ],
+
   providers: [],
   bootstrap: [AppComponent],
   declarations: [
@@ -44,9 +49,7 @@ import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.com
     JornadaCadastrarComponent,
     FuncionarioEditarComponent,
     LoginAutenticarComponent,
-    LoginCadastrarComponent,
-    HomeFuncionarioComponent,
-    HomeGerenteComponent
+    LoginCadastrarComponent
   ]
 })
 export class AppModule { }
