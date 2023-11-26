@@ -50,7 +50,7 @@ const routes: Routes = [
     component: JornadaCadastrarComponent
   },
   {
-    path: "portalcolaborador/jornada/editar/:id",
+    path: "portalcolaborador/funcionario/editar/:id",
     component: FuncionarioEditarComponent
   }
 ];

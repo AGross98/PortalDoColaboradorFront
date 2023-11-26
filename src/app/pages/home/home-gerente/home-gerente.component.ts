@@ -15,7 +15,7 @@ export class HomeGerenteComponent implements OnInit {
   ngOnInit(): void {
     if (!this.authService.isGerente()) {
       // Se não for um gerente, redirecione para a página do usuário comum
-      this.router.navigate(['/portalcolaborador/home-usuario']);
+      this.router.navigate(['/portalcolaborador/home-gerente']);
     }
   }
 }
