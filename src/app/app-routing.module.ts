@@ -10,6 +10,7 @@ import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-a
 import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
 import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
 
+
 const routes: Routes = [
 
   {
