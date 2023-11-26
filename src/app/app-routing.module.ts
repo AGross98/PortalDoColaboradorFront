@@ -7,6 +7,8 @@ import { JornadaListarComponent } from './pages/jornada/jornada-listar/jornada-l
 import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-editar/funcionario-editar.component';
 import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
 import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
+import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
+import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: "portalcolaborador/login",
     component: LoginAutenticarComponent
+  },
+  {
+    path: "portalcolaborador/home-gerente",
+    component: HomeGerenteComponent
+  },
+  {
+    path: "portalcolaborador/home-usuario",
+    component: HomeFuncionarioComponent
   },
   {
     path: "portalcolaborador/funcionario/listar",

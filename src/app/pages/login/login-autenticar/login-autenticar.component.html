@@ -1,15 +1,22 @@
-<div>
-    <p>Portal do Colaborador</p>
-
-    <label for="usuario">Usuário</label>
-    <input type="text" id="usuario" name="usuario">
+<div class="login-container">
+    <h2>Portal do Colaborador</h2>
+  
+    <form (ngSubmit)="autenticar()" class="login-form">
+      <div class="form-group">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" [(ngModel)]="usuario" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" [(ngModel)]="senha" required>
+      </div>
+      
+      <button type="submit">Entrar</button>
+    </form>
     
-    <br>
-    
-    <label for="senah">Senha</label>
-    <input type="text" id="senha" name="senha">
-    
-    <button>Entrar</button>
-    <br>
-    <a routerLink="/portalcolaborador/login/cadastrar">Cadastrar</a>
-</div>
+    <div class="signup-link">
+      <a routerLink="/portalcolaborador/login/cadastrar">Cadastrar</a>
+    </div>
+  </div>
+  

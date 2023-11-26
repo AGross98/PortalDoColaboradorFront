@@ -1,19 +1,23 @@
 
-<div>
-    <p>Portal do Colaborador</p>
+<div class="signup-container">
+    <h2>Cadastro no Portal do Colaborador</h2>
 
-    <label for="cpf">CPF</label>
-    <input type="number" id="cpf" name="cpf" [(ngModel)]="cpf" required>
+    <form (ngSubmit)="CadastrarUsuario()" class="signup-form">
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="number" id="cpf" name="cpf" [(ngModel)]="cpf" required>
+        </div>
 
-    <br>
-
-    <label for="usuario">Usuário</label>
-    <input type="text" id="usuario" name="usuario" [(ngModel)]="user">
-    
-    <br>
-    
-    <label for="senah">Senha</label>
-    <input type="password" id="senha" name="senha" [(ngModel)]="senha">
-    
-    <button (click)="CadastrarUsuario()">Cadastrar</button>
+        <div class="form-group">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" [(ngModel)]="user" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" [(ngModel)]="senha" required>
+        </div>
+        
+        <button type="submit">Cadastrar</button>
+    </form>
 </div>

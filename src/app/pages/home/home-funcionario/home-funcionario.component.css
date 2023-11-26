@@ -1,0 +1,17 @@
+/* home-usuario.css */
+
+.content {
+    padding: 16px;
+}
+
+.content h2 {
+    color: #333;
+}
+
+.content p {
+    color: #666;
+    margin-bottom: 16px;
+}
+.container{
+    height: calc(100% - 64px);
+}
