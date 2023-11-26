@@ -9,7 +9,9 @@ import { Jornada } from 'src/app/models/jornada';
 })
 export class JornadaListarComponent implements OnInit {
 
-  jornadas : Jornada [] = [];
+  colunasTabela: string[] = ['ponto', 'funcionario'];
+
+  jornadas: Jornada[] = [];
 
   constructor(private httpClient: HttpClient) {}
 
@@ -20,10 +22,12 @@ export class JornadaListarComponent implements OnInit {
       next: (jornadas) => {
         this.jornadas = jornadas;
         console.table(jornadas);
+        console.log(jornadas)
       },
       error: (erro) => {
         console.log(erro);
       }
     });
   }
+
 }
