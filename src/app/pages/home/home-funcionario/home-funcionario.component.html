@@ -1,1 +1,33 @@
-<p>home-funcionario works!</p>
+<!-- usuario-home.component.html -->
+
+<p>home Usuário</p>
+
+<mat-toolbar color="primary">
+    <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Menu</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidenav [opened]="true" mode="side">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/portalcolaborador/jornada/listar">
+                <div class="item">
+                    <mat-icon class="icon">list</mat-icon>
+                    <span>listar jornada</span>
+                </div>
+            </a>
+            <a mat-list-item routerLink="/portalcolaborador/jornada/cadastrar">
+                <div class="item">
+                    <mat-icon class="icon">add</mat-icon>
+                    <span>cadastrar jornada</span>
+                </div>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!-- Conteúdo específico da página do usuário comum aqui -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

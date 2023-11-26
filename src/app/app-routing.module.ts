@@ -8,6 +8,7 @@ import { FuncionarioEditarComponent } from './pages/funcionario/funcionario-edit
 import { LoginCadastrarComponent } from './pages/login/login-cadastrar/login-cadastrar.component';
 import { LoginAutenticarComponent } from './pages/login/login-autenticar/login-autenticar.component';
 import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
+import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
 
 const routes: Routes = [
 
@@ -24,8 +25,12 @@ const routes: Routes = [
     component: LoginAutenticarComponent
   },
   {
-    path: "portalcolaborador/home",
+    path: "portalcolaborador/home-gerente",
     component: HomeGerenteComponent
+  },
+  {
+    path: "portalcolaborador/home-usuario",
+    component: HomeFuncionarioComponent
   },
   {
     path: "portalcolaborador/funcionario/listar",
