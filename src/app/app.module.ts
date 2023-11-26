@@ -21,6 +21,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from "@angular/material/card";
 import { MatTableModule } from "@angular/material/table";
 import { MatInputModule } from '@angular/material/input';
+import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
+import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,8 @@ import { MatInputModule } from '@angular/material/input';
     MatToolbarModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
@@ -48,7 +51,9 @@ import { MatInputModule } from '@angular/material/input';
     JornadaCadastrarComponent,
     FuncionarioEditarComponent,
     LoginAutenticarComponent,
-    LoginCadastrarComponent
+    LoginCadastrarComponent,
+    HomeFuncionarioComponent,
+    HomeGerenteComponent
   ]
 })
 export class AppModule { }

@@ -1,0 +1,20 @@
+css
+.menu{
+    background-color: transparent;
+    color: white;
+    border: none;
+
+}
+
+.container{
+    height: calc(100% - 64px);
+}
+
+.item{
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    margin-right: 8px;
+}
