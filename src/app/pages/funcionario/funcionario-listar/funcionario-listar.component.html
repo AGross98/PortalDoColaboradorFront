@@ -31,6 +31,11 @@
           <th mat-header-cell *matHeaderCellDef>Status</th>
           <td mat-cell *matCellDef="let funcionario">{{ funcionario.status }}</td>
         </ng-container>
+
+        <ng-container matColumnDef="cargo">
+          <th mat-header-cell *matHeaderCellDef>Cargo</th>
+          <td mat-cell *matCellDef="let funcionario">{{ obterCargoLegivel(funcionario.cargo) }}</td>
+        </ng-container>
   
         <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef>Ações</th>

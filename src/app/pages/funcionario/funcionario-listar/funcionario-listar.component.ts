@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/models/funcionarios';
 
 @Component({
@@ -7,49 +7,46 @@ import { Funcionario } from 'src/app/models/funcionarios';
   templateUrl: './funcionario-listar.component.html',
   styleUrls: ['./funcionario-listar.component.css']
 })
-export class FuncionarioListarComponent {
-  colunasTabela : string[] = [
-    "id",
-    "nome",
-    "cpf",
-    "status",
-    "acoes"
-  ]
+export class FuncionarioListarComponent implements OnInit {
+  colunasTabela: string[] = [
+    'id',
+    'nome',
+    'cpf',
+    'status',
+    'cargo',
+    'acoes'
+  ];
 
-  funcionarios : Funcionario[] = []
+  obterCargoLegivel(cargo: number): string {
+    return cargo === 0 ? 'Funcionário' : 'Gerente';
+  }
 
- constructor(private clinet: HttpClient){
-  
- }
- 
- ngOnInit(): void{
-  console.log("o conponente foi inciado");
+  funcionarios: Funcionario[] = [];
 
+  constructor(private client: HttpClient) {}
 
-  this.clinet.get<Funcionario[]>("https://localhost:7061/portalcolaborador/funcionario/listar")
-  .subscribe({
-    next: (funcionarios) =>{
-      this.funcionarios = funcionarios;
-      console.table(funcionarios);
-    },
+  ngOnInit(): void {
+    console.log('O componente foi iniciado');
 
-    error:(erro) => {
-      console.log(erro);
-    }
+    this.client.get<Funcionario[]>('https://localhost:7061/portalcolaborador/funcionario/listar')
+      .subscribe({
+        next: (funcionarios) => {
+          this.funcionarios = funcionarios;
+          console.table(funcionarios);
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      });
+  }
 
-  })
- }
-
- Deletar(id: number): void{
-  console.log(id);
-  this.clinet.delete(`https://localhost:7061/portalcolaborador/funcionario/deletar/${id}`)
-  .subscribe({
-    next: () =>{
-      this.ngOnInit();
-    }
-  })
- }
-
+  Deletar(id: number): void {
+    console.log(id);
+    this.client.delete(`https://localhost:7061/portalcolaborador/funcionario/deletar/${id}`)
+      .subscribe({
+        next: () => {
+          this.ngOnInit();
+        }
+      });
+  }
 }
-
-//https://localhost:7061/portalcolaborador/funcionario/listar

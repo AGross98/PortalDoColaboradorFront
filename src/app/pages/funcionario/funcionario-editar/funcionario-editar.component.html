@@ -1,23 +1,33 @@
 <div class="form-container">
-    <mat-card class="card-container">
+  <mat-card class="card-container">
     <mat-card-title class="titulo">Editar Funcionário</mat-card-title>
     <mat-card-content>
       <mat-form-field class="full-width">
         <mat-label>Nome</mat-label>
         <input matInput type="text" id="nome" name="nome" required [(ngModel)]="nome">
       </mat-form-field>
-  
+
       <mat-form-field class="full-width">
         <mat-label>CPF</mat-label>
         <input matInput type="text" id="cpf" name="cpf" required [(ngModel)]="cpf">
       </mat-form-field>
-  
+
       <mat-form-field class="full-width">
         <mat-label>Status</mat-label>
         <input matInput type="text" id="status" name="status" required [(ngModel)]="status">
       </mat-form-field>
+
+      <!-- Novo campo para o cargo -->
+      <mat-form-field class="full-width">
+        <mat-label>Cargo</mat-label>
+        <mat-select id="cargo" name="cargo" required [(ngModel)]="cargo">
+          <mat-option value="0">Funcionário</mat-option>
+          <mat-option value="1">Gerente</mat-option>
+        </mat-select>
+      </mat-form-field>
+
     </mat-card-content>
-  
+
     <mat-card-actions class="button-container">
       <button mat-raised-button color="primary" (click)="Editar()">Salvar Alterações</button>
     </mat-card-actions>

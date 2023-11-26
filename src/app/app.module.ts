@@ -23,6 +23,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatInputModule } from '@angular/material/input';
 import { HomeGerenteComponent } from './pages/home/home-gerente/home-gerente.component';
 import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-funcionario.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ import { HomeFuncionarioComponent } from './pages/home/home-funcionario/home-fun
     MatCardModule,
     MatTableModule,
     MatInputModule,
-    
+    MatSelectModule,    
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

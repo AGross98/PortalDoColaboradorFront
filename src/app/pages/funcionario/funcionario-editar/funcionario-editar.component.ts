@@ -13,7 +13,8 @@ export class FuncionarioEditarComponent {
   id!: number;
   nome!: string;
   cpf!: string;
-  status: number = 0;
+  status!: number
+  cargo!: number
 
   constructor(
     private client: HttpClient,
@@ -40,26 +41,27 @@ export class FuncionarioEditarComponent {
     })
   }
 
-  Editar(){
-    this.route.params.subscribe((parames)=>{
-      let {id} = parames;
+  Editar() {
+    this.route.params.subscribe((params) => {
+      let { id } = params;
+  
+      let funcionario: Funcionario = {
+        nome: this.nome,
+        cpf: this.cpf,
+        status: this.status,
+        cargo: this.cargo
 
-      let funcionario : Funcionario = {
-        nome : this.nome,
-        cpf : this.cpf,
-        status : this.status
       };
-      
-      this.client.put<Funcionario>
-      (`https://localhost:7061/portalcolaborador/funcionario/atualizar/${id}`,funcionario)
-      .subscribe({
-        next:()=>{
-          this.roter.navigate(['portalcolaborador/funcionario/listar']);
-        }})
-
-    })
-
+  
+      this.client.patch(`https://localhost:7061/portalcolaborador/funcionario/atualizar/${id}`, funcionario)
+        .subscribe({
+          next: () => {
+            this.roter.navigate(['portalcolaborador/funcionario/listar']);
+          },
+          error: (err) => {
+            console.error(err);
+          },
+        });
+    });
   }
-
 }
-

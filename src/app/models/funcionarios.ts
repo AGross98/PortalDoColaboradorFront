@@ -3,4 +3,5 @@ export interface Funcionario{
     nome: string,
     cpf: string,
     status: number
+    cargo?: number
 }
