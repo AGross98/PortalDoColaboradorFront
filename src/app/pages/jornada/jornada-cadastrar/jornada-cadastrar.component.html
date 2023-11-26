@@ -1,17 +1,20 @@
-<p>Cadastrar Jornada</p>
+<mat-card class="container">
+  <mat-card-header class="center">
+    <mat-card-title>Cadastrar Jornada</mat-card-title>
+  </mat-card-header>
 
-  <label for="data">Data:</label>
-  <input type="date" id="data" name="data" [(ngModel)]="ponto" required>
+  <mat-card-content>
+    <mat-form-field class="full-width">
+      <mat-label>Funcionário</mat-label>
+      <mat-select [(ngModel)]="funcionarioId" name="funcionarioId" required>
+        <mat-option *ngFor="let f of funcionarios" [value]="f.funcionarioId">
+          {{ f.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
 
-  <br><br>
-
-  <label>Funcionario</label>
-  <select [(ngModel)]="funcionarioId">
-    <option *ngFor="let f of funcionarios" value="{{ f.funcionarioId }}">
-      {{f.nome}}
-    </option>
-  </select>
-
-  <br><br>
-
-  <button (click)="Cadastrar()">Cadastrar</button>
+  <mat-card-actions class="button-container">
+    <button mat-raised-button color="primary" (click)="Cadastrar()">Cadastrar</button>
+  </mat-card-actions>
+</mat-card>
