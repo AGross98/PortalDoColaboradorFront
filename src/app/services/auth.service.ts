@@ -1,39 +1,45 @@
-// auth.service.ts
-
 import { Injectable } from '@angular/core';
-import { Usuario } from 'src/app/models/usuario';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Usuario } from '../models/usuario';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private usuarioLogado: Usuario | null = null;
+  private usuario: Usuario | null = null;
 
-  login(usuario: Usuario): boolean {
-    // Simulação de autenticação
-    // Aqui você pode adicionar a lógica de autenticação real
-    // Por exemplo, comparar com usuários no banco de dados
-    if (usuario.user === 'gerente' && usuario.senha === 'senha_gerente') {
-      this.usuarioLogado = usuario;
-      return true;
-    } else if (usuario.user === 'usuario' && usuario.senha === 'senha_usuario') {
-      this.usuarioLogado = usuario;
-      return true;
-    } else {
-      return false;
-    }
+  constructor(private http: HttpClient) {}
+
+  login(usuario: Usuario): Observable<any> {
+    // Substitua a URL pelo endpoint real da sua API de autenticação
+    const apiUrl = 'https://localhost:7061/portalcolaborador/login/autenticar';
+
+    return this.http.post(apiUrl, usuario).pipe(
+      tap((response: any) => {
+        // Verifica se a resposta contém uma mensagem de autenticação bem-sucedida
+        if (response && response.message) {
+          // Exibe a mensagem (pode ser útil para depuração)
+          console.log(response.message);
+
+          // Se necessário, você pode realizar outras ações aqui com base na mensagem
+
+        } else if (response && response.funcionario) {
+          // Se a resposta contiver informações do funcionário, armazene o usuário autenticado
+          this.usuario = response;
+        } else {
+          console.error('Resposta da API não contém as informações esperadas:', response);
+        }
+      })
+    );
   }
 
-  logout(): void {
-    this.usuarioLogado = null;
-  }
-
+  // Verifica se o usuário é um gerente
   isGerente(): boolean {
-    // Verifica se o usuário logado é um gerente
-    return this.usuarioLogado?.user === 'gerente';
-  }
-
-  getUsuarioLogado(): Usuario | null {
-    return this.usuarioLogado;
+    const cargo = this.usuario?.funcionario?.cargo;
+    console.log('Cargo do funcionário:', cargo);
+  
+    return cargo === 1;
   }
 }
