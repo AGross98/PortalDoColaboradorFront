@@ -53,7 +53,7 @@ export class FuncionarioEditarComponent {
 
       };
   
-      this.client.patch(`https://localhost:7061/portalcolaborador/funcionario/atualizar/${id}`, funcionario)
+      this.client.put(`https://localhost:7061/portalcolaborador/funcionario/atualizar/${id}`, funcionario)
         .subscribe({
           next: () => {
             this.roter.navigate(['portalcolaborador/funcionario/listar']);

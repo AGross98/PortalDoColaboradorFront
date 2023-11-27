@@ -40,7 +40,7 @@
         <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef>Ações</th>
           <td mat-cell *matCellDef="let funcionario" class="action">
-            <a mat-button routerLink="/portalcolaborador/jornada/editar/{{funcionario.funcionarioId}}" class="editar">
+            <a mat-button routerLink="/portalcolaborador/funcionario/atualizar/{{funcionario.funcionarioId}}" class="editar">
               <mat-icon class="icon">edit</mat-icon>
             </a>
             <button mat-button (click)="Deletar(funcionario.funcionarioId)" class="deletar">

@@ -55,7 +55,6 @@ export class LoginCadastrarComponent {
           next: () => {
             this.router.navigate(['portalcolaborador/login']);
           }
-          
         })
     }
   }
